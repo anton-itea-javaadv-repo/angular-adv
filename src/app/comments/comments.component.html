@@ -1,0 +1,18 @@
+<h1>Comments Sub1!</h1>
+<div *ngIf="comments">
+  <p *ngFor="let comment of comments">
+    {{comment.body}}
+  </p>
+</div>
+
+<h1>Comments Sub2!</h1>
+<div *ngIf="$comments | async as data">
+  <p *ngFor="let item of data">
+    {{item.body}}
+  </p>
+</div>
+
+<h1>Comments Error!</h1>
+<div *ngIf="error">
+  <p>{{error}}</p>
+</div>
