@@ -1,8 +1,9 @@
+<p>This page is shown within app-component router outlet when comments path is shown.</p>
 <h1>Comments Sub1!</h1>
 <div *ngIf="comments">
-  <p *ngFor="let comment of comments">
-    {{comment.body}}
-  </p>
+  <div *ngFor="let comment of comments">
+    <a routerLink="{{comment.id}}">View</a> <p>{{comment.body}}</p>
+  </div>
 </div>
 
 <h1>Comments Sub2!</h1>

@@ -1,1 +1,9 @@
 <p>comments-checker works!</p>
+<p>This page is shown within app-component router outlet when comments-checker path is shown.</p>
+<p>This list is shown on every page of comments-checker as a header for it's children.</p>
+<ul>
+  <li><a routerLink="comments-checker-child1">Comments-checker-child1</a></li>
+  <li><a routerLink="comments-checker-child2">Comments-checker-child2</a></li>
+</ul>
+<button (click)="onClick()">{{(isActive ? "Deactivate" : "Activate") + " child2"}}</button>
+<router-outlet/>

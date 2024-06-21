@@ -1,0 +1,8 @@
+<p>comment-view works!</p>
+<a routerLink="/comments">Back</a>
+<div *ngIf="commentById">
+  <p>ID: {{commentById.id}}
+  <p>Name: {{commentById.name}}</p>
+  <p>E-mail: {{commentById.email}}</p>
+  <p>Body: {{commentById.body}}</p>
+</div>

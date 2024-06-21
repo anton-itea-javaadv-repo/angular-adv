@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {find, from, map, Observable, Subscription, tap} from "rxjs";
 import {CommentI, CommentsService} from "../comments.service";
 import {AsyncPipe, NgFor, NgIf} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-comments',
@@ -9,7 +10,8 @@ import {AsyncPipe, NgFor, NgIf} from "@angular/common";
   imports: [
     AsyncPipe,
     NgIf,
-    NgFor
+    NgFor,
+    RouterLink
   ],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.css'
@@ -33,7 +35,7 @@ export class CommentsComponent implements OnDestroy, OnInit {
     this.$comments = this.commentsService.getAllComments()
       .pipe(map(items => items.slice(10, 20)));
 
-    this.commentsService.getComment().subscribe({
+    this.commentsService.getCommentErr().subscribe({
       next: value => console.log('value: ', value),
       error: error => {
         console.log('error: ', error);

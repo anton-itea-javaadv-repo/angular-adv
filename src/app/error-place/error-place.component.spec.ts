@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CommentsCheckerComponent} from './comments-checker.component';
+import {ErrorPlaceComponent} from './error-place.component';
 
-describe('CommentsCheckerComponent', () => {
-  let component: CommentsCheckerComponent;
-  let fixture: ComponentFixture<CommentsCheckerComponent>;
+describe('ErrorPlaceComponent', () => {
+  let component: ErrorPlaceComponent;
+  let fixture: ComponentFixture<ErrorPlaceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommentsCheckerComponent]
+      imports: [ErrorPlaceComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CommentsCheckerComponent);
+    fixture = TestBed.createComponent(ErrorPlaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

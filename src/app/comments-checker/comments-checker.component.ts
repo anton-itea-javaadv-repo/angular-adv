@@ -1,10 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {CommentsService} from "../comments.service";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-comments-checker',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterOutlet,
+    RouterLink
+  ],
   templateUrl: './comments-checker.component.html',
   styleUrl: './comments-checker.component.css'
 })
@@ -16,5 +20,13 @@ export class CommentsCheckerComponent implements OnInit {
       .subscribe(item => console.log('comments-checker beh item:', item));
     this.commentsService.normalSubject
       .subscribe(item => console.log('comments-checker normal item:', item));
+  }
+
+  get isActive() {
+    return this.commentsService.isActive;
+  }
+
+  onClick() {
+    this.commentsService.flipActivate();
   }
 }
